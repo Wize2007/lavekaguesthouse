@@ -1,3 +1,5 @@
+
+
 // ===============================
 // MOBILE NAVIGATION
 // ===============================
@@ -14,25 +16,7 @@ if(navToggle){
     });
 
 }
-// ===============================
-// STICKY NAVBAR
-// ===============================
 
-const navbar=document.querySelector(".navbar");
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>80){
-
-navbar.classList.add("non-sticky");
-
-}else{
-
-navbar.classList.remove("non-sticky");
-
-}
-
-});
 const reveals=document.querySelectorAll(".reveal");
 
 function revealSections(){
@@ -113,25 +97,26 @@ faq.classList.toggle("open");
 });
 
 });
-const topBtn=document.getElementById("topBtn");
+const topBtn = document.getElementById("topBtn");
 
-window.addEventListener("scroll",()=>{
+if (topBtn) {
 
-topBtn.style.display=window.scrollY>400?"block":"none";
+    window.addEventListener("scroll", () => {
 
-});
+        topBtn.style.display = window.scrollY > 400 ? "block" : "none";
 
-topBtn.onclick=()=>{
+    });
 
-window.scrollTo({
+    topBtn.onclick = () => {
 
-top:0,
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
-behavior:"smooth"
+    };
 
-});
-
-};
+}
 window.addEventListener("load",()=>{
 
 document.getElementById("loader").style.display="none";
@@ -227,38 +212,44 @@ if(contactForm){
 // DARK MODE
 // ===========================
 
+// ===========================
+// DARK MODE
+// ===========================
+
 const themeToggle = document.getElementById("theme-toggle");
-const body = document.body;
-const icon = themeToggle.querySelector("i");
 
-// Load saved theme
-if(localStorage.getItem("theme") === "dark"){
+if (themeToggle) {
 
-    body.classList.add("dark-mode");
+    const icon = themeToggle.querySelector("i");
 
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-
-}
-
-themeToggle.addEventListener("click",()=>{
-
-    body.classList.toggle("dark-mode");
-
-    if(body.classList.contains("dark-mode")){
-
-        localStorage.setItem("theme","dark");
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
 
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
-
-    }else{
-
-        localStorage.setItem("theme","light");
-
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-
     }
 
-});
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            localStorage.setItem("theme", "dark");
+
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+        } else {
+
+            localStorage.setItem("theme", "light");
+
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+        }
+
+    });
+
+}
