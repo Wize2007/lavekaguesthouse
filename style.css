@@ -467,9 +467,9 @@ body{
 
     padding:20px 8%;
 
-    position:sticky;
+    position:relative;
 
-    top:0;
+
 
     background:rgba(255,255,255,.9);
 
@@ -993,9 +993,9 @@ cursor:pointer;
 
 .gallery-item img{
 
-width:100%;
+width: 50%;
 
-height:260px;
+height: 150px;
 
 object-fit:cover;
 
@@ -1156,13 +1156,7 @@ border:0;
 display:flex;
 
 }
-.navbar.sticky{
 
-background:white;
-
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-
-}
 .reveal{
 
 opacity:0;
@@ -1321,31 +1315,14 @@ transform:scale(1.1);
 =========================== */
 
 .navbar{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    padding:18px 8%;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:rgba(255,255,255,.92);
-
-    backdrop-filter:blur(12px);
-
-    z-index:1000;
-
-    transition:.4s;
-
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(12px);
 }
 
 .logo{
@@ -1731,4 +1708,16 @@ body.dark-mode .nav-links a:hover{
 
     color:var(--gold);
 
+}
+.founder-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.founder-image img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
 }
