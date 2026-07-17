@@ -24,7 +24,7 @@ window.addEventListener("scroll",()=>{
 
 if(window.scrollY>80){
 
-navbar.classList.add("sticky");
+navbar.classList.add("non-sticky");
 
 }else{
 
