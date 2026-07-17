@@ -28,7 +28,7 @@ navbar.classList.add("non-sticky");
 
 }else{
 
-navbar.classList.remove("sticky");
+navbar.classList.remove("non-sticky");
 
 }
 
